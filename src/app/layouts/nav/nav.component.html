@@ -1,0 +1,23 @@
+<nav class="white" role="navigation">
+  <div class="nav-wrapper container">
+    <a id="logo-container" href="#" class="brand-logo">Logo</a>
+    <ul class="right hide-on-med-and-down">
+      <li><a [routerLink]="['/home', 1234]">Home </a></li>
+
+      <li><a routerLink="mobile">Mobile </a></li>
+      <!-- <li><a routerLink="lapi">Laptops </a></li> -->
+      <li><a [routerLink]="['/lapi', 123]">Laptops </a></li>
+      <li><a routerLink="book">Books </a></li>
+    </ul>
+
+    <ul id="nav-mobile" class="sidenav">
+      <li><a routerLink="home">Home </a></li>
+      <li><a routerLink="mobile">Mobile </a></li>
+      <li><a routerLink="lapi">Laptops </a></li>
+      <li><a routerLink="book">Books </a></li>
+    </ul>
+    <a href="#" data-target="nav-mobile" class="sidenav-trigger"
+      ><i class="material-icons">menu</i></a
+    >
+  </div>
+</nav>

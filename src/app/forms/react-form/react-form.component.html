@@ -1,0 +1,25 @@
+<div class="container">
+  <h3>react-form works!</h3>
+
+  <mat-checkbox class="example-margin">Check me!</mat-checkbox>
+  <mat-checkbox>Check me!</mat-checkbox>
+  <form [formGroup]="formObj">
+    <div class="input-field col s12">
+      <label>uname</label>
+      <input type="text" formControlName="uNameObj" />
+      <div style="color: red;" *ngIf="uName.touched && uName.invalid">
+        Error...!
+        <div *ngIf="uName.errors.required">Required...</div>
+        <div *ngIf="uName.errors.minlength">
+          Min {{ uName.errors.minlength.requiredLength }} Length
+        </div>
+      </div>
+    </div>
+
+    <div class="input-field col s12">
+      <label>Password</label>
+
+      <input type="password" formControlName="passObj" class="validate" />
+    </div>
+  </form>
+</div>

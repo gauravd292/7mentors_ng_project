@@ -1,0 +1,58 @@
+<div class="container">
+  <form #formTempvar="ngForm" (ngSubmit)="submitForm(formTempvar)">
+    <div class="input-field">
+      <label for="username">User Name</label>
+      <input
+        type="text"
+        ngModel
+        name="name"
+        #tempVar="ngModel"
+        (keyup)="log(tempVar)"
+        required
+        minlength="3"
+        pattern="Angular"
+      />
+      <div style="color: red;" *ngIf="tempVar.touched && !tempVar.valid">
+        Something Went Wrong..!
+        <div *ngIf="tempVar.errors.required">required</div>
+        <div *ngIf="tempVar.errors.minlength">
+          User name must be minimum
+          {{ tempVar.errors.minlength.requiredLength }} length
+        </div>
+        <div *ngIf="tempVar.errors.pattern">pattern</div>
+      </div>
+    </div>
+
+    <div class="input-field">
+      <label>Address</label>
+      <textarea class="materialize-textarea" ngModel name="address"></textarea>
+    </div>
+
+    <!-- <p class="input-field">
+      <select ngModel name="city" class="dropdown-content">
+        <option value="" disabled selected>Choose your option</option>
+        <option value="1">Option 1</option>
+        <option value="2">Option 2</option>
+        <option value="3">Option 3</option>
+      </select>
+      <label>Materialize Select</label>
+    </p> -->
+
+    <p>
+      <label>
+        <input type="checkbox" name="agree" ngModel checked="checked" />
+        <span>Agree</span>
+      </label>
+    </p>
+
+    <div>
+      <input
+        type="submit"
+        class="waves-effect waves-light btn"
+        [disabled]="!formTempvar.valid"
+      />
+    </div>
+    <hr />
+    {{ formTempvar.value | json }}
+  </form>
+</div>

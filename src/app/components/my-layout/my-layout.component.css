@@ -1,0 +1,16 @@
+.cls {
+  border: 1px solid silver;
+  height: 450px;
+}
+
+#div1,
+#div7 {
+  height: 100px;
+}
+
+#div1,
+#div3,
+#div5,
+#div7 {
+  background-color: #fff;
+}
